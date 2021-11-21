@@ -1,10 +1,16 @@
 <template>
-<h1>Interact Component here</h1>
+  <h1>Interact Component here</h1>
+  <card-flip></card-flip>
 </template>
 
 <script>
+import CardFlip from "./Card";
+
 export default {
-  name: "InteractScreen"
+  name: "InteractScreen",
+  components: {
+    CardFlip
+  }
 };
 </script>
 
