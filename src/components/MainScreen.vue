@@ -3,19 +3,20 @@
     <h1>POKE MEMORIES</h1>
     <h3>Select mode to start game</h3>
     <div class="actions">
-      <button>
+      <button @click="onStart(16)">
+        <!-- Number to know user what user choice level -->
         <span>4x4</span>
         <span>Easy</span>
       </button>
-      <button>
+      <button @click="onStart(36)">
         <span>6x6</span>
         <span>Normal</span>
       </button>
-      <button>
+      <button @click="onStart(64)">
         <span>8x8</span>
         <span>Hard</span>
       </button>
-      <button>
+      <button @click="onStart(100)">
         <span>10x10</span>
         <span>Super Hard</span>
       </button>
@@ -23,8 +24,15 @@
   </div>
 </template>
 <script>
+
 export default {
-  name: "MainScreen"
+  name: "MainScreen",
+  methods: {
+    onStart(totalOfBlocks) {
+      //$emit to send data to parent was import it and use v-on to get
+      this.$emit("onStart", { totalOfBlocks });
+    }
+  }
 };
 </script>
 
